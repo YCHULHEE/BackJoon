@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class FastAB {
     static final int MAX_T = 1000000;
@@ -7,20 +8,27 @@ public class FastAB {
     static int a = 0;
     static int b = 0;
     static int t = 0;
-    static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
         System.out.println("테스트 할 갯수를 적어주세요.");
-        t = scanner.nextInt();
+        t = Integer.parseInt(br.readLine());
+
         if (t < 0 && t > MAX_T) {
             return;
         }
+
         for (int i = 0; i < t; i++) {
-            a = scanner.nextInt();
-            b = scanner.nextInt();
+            StringTokenizer st = new StringTokenizer((br.readLine()));
+            a = Integer.parseInt(st.nextToken());
+            b = Integer.parseInt(st.nextToken());
             if (a >= MIN_NUM && a <= MAX_NUM && b >= MIN_NUM && b <= MAX_NUM) {
-                System.out.println(a+b);
+                String sum = Integer.toString(a+b);
+                bw.write(sum+"\n");
             }
+            bw.flush();
         }
     }
 }
