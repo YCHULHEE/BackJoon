@@ -4,7 +4,7 @@ public class MiddleStringGet {
 
     }
 
-    
+
     // 한 줄로 처리 가능
     String getMiddle(String word){
         return word.substring((word.length()-1) / 2, word.length()/2 + 1);
