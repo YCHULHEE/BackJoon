@@ -1,7 +1,16 @@
 import java.util.ArrayList;
 
 public class MathGiveUp {
-    public int[] solution(int[] answers) {
+    public static void main(String[] args) {
+        int[] answers = {1, 3, 2, 4, 2};
+        int[] a = solution(answers);
+
+        for(int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
+    }
+
+    public static int[] solution(int[] answers) {
         int[] answer = {};
         int[] person1 = {1, 2, 3, 4, 5}; //이만큼씩 반복
         int[] person2 = {2, 1, 2, 3, 2, 4, 2, 5};
@@ -26,10 +35,6 @@ public class MathGiveUp {
         for (int i = 0; i < answer.length; i++) {
             answer[i] = list.get(i);
         }
-
         return answer;
-    }
-    public static void main(String[] args) {
-
     }
 }
