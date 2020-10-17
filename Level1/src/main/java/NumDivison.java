@@ -15,17 +15,18 @@ public class NumDivison {
                 arrayList.add(arr[i]);
             }
         }
+
         if (arrayList.isEmpty()) {
             return answer1;
         }
 
         Collections.sort(arrayList);
-
         answer = new int[arrayList.size()];
 
         for (int i = 0; i < answer.length; i++) {
             answer[i] = arrayList.get(i);
         }
+
         return answer;
     }
 }
