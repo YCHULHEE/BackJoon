@@ -1,5 +1,4 @@
-public class GooGooDan {
-
+public class GooGoodan {
         public int solution(int number) {
             return  count(number);
         }
@@ -30,8 +29,6 @@ public class GooGooDan {
 
             }
             return result;
-        }
-    public static void main(String[] args) {
 
-    }
+        }
 }
