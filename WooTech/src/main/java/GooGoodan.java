@@ -25,8 +25,6 @@ public class GooGoodan {
 
                     }
                 }
-
-
             }
             return result;
 

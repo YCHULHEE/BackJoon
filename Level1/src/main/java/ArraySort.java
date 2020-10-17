@@ -11,6 +11,7 @@ public class ArraySort {
             answer[i] = temp[commands[i][2]-1];
         }
         return answer;
+
     }
 
 
