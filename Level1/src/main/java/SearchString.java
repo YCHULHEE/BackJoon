@@ -7,8 +7,7 @@ public class SearchString {
             if (seoul[i].equals("Kim")) {
                 answer += "김서방은" + i + "에 있다";
             }
-        }
-        return answer;
+        }        return answer;
     }
 
     public static void main(String[] args) {
