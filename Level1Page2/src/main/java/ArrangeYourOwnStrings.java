@@ -5,6 +5,8 @@ public class ArrangeYourOwnStrings {
         String[] answer = {};
         String temp = "";
 
+        ArrayList<String> list = new ArrayList<String>();
+
         Arrays.sort(strings, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
