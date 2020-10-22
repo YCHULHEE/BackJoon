@@ -2,14 +2,15 @@ public class PageNumGame {
     static int[] pageDigits = {1, 10, 100};
 
     public static void main(String[] args) {
-       int[] pobi = {233, 234};
-       int[] crong = {341, 342};
+       int[] pobi = {231, 232};
+       int[] crong = {331, 332};
 
        int result = solution(pobi, crong);
     }
 
     public static int solution(int[] pobi, int[] crong) {
-        if (checkPage(pobi, crong) == true) {
+        boolean checkPage = validation(pobi, crong);
+        if (checkPage == true) {
             return -1;
         }
 
@@ -17,8 +18,10 @@ public class PageNumGame {
         int pobiRightPage = getSumOfPages(pobi[1]);
         int crongLeftPage = getSumOfPages(crong[0]);
         int crongRightPage = getSumOfPages(crong[1]);
-        int pobiLargePage = getLargePage(pobiLeftPage, pobiRightPage);
-        int crongLargePage = getLargePage(crongLeftPage, crongRightPage);
+        int pobiLargePage = Math.max(pobiLeftPage, pobiRightPage);
+        int crongLargePage =  Math.max(crongLeftPage, crongRightPage);
+
+        int a = Math.max(10, 10);
 
         if (pobiLargePage > crongLargePage) {
             return 1;
@@ -32,13 +35,19 @@ public class PageNumGame {
         return -1;
     }
 
-    public static boolean checkPage(int[] pobi, int[] crong) {
+    public static boolean validation(int[] pobi, int[] crong) {
         if ((pobi[0] == 1) || (pobi[1] == 400) || (pobi[0] % 2 == 0) || (pobi[1] % 2 == 1)) {
             return true;
         }
+
         if (crong[0] == 1 || crong[1] == 400 || (crong[0] % 2 == 0) || (crong[1] % 2 == 1)) {
             return true;
         }
+
+        if ((pobi[0] + 1) != pobi[1] || (crong[0] + 1) != crong[1]) {
+            return true;
+        }
+
         return false;
     }
 
