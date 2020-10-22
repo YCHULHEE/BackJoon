@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class MoneyReturn {
-    public static int[] solution(int money) {
+    public int[] solution(int money) {
         int[] answer = new int[9];
         int changes;
 
@@ -26,10 +26,23 @@ public class MoneyReturn {
         return answer;
     }
 
-    public static void main(String[] args) {
-        int[] a = solution(68992);
+    public static int[] solution1(int money) {
+        int[] answer = new int[9];
+        int[] changes = {50000, 10000, 5000, 1000, 500, 100, 50, 10, 1};
+        int change = money;
 
-        for(int i = 0; i < a.length; i++) {
+        for (int i = 0; i < changes.length; i++) {
+            answer[i] = change / changes[i];
+            change = change % changes[i];
+        }
+
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        int[] a = solution1(123999);
+
+        for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
     }
