@@ -5,7 +5,7 @@ public class LifeBoat {
     int[] people = {70, 80, 50};
     int limit = 100;
     int a = solution(people, limit);
-
+    
     }
 
     public static int solution(int[] people, int limit) {
